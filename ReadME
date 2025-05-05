@@ -1,0 +1,7 @@
+docker build -t traffic-collector .
+
+# Without Admin
+docker run --rm --env-file .env --net=host --cap-add=NET_RAW traffic-collector
+
+# With admin
+docker run --rm --env-file .env --net=host --cap-add=NET_ADMIN traffic-collector
